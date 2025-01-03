@@ -2,6 +2,9 @@ FROM alpine:3.19
 
 # Install necessary packages and set up directories
 RUN apk add --no-cache \
+    mpv \
+    vim \
+    qbittorrent-nox \
     curl \
     ca-certificates \
     gnupg \
@@ -10,6 +13,11 @@ RUN apk add --no-cache \
     jq \
     bash \
     ffmpeg && \
+    libstdc++ \
+    boost-system \
+    boost-program_options \
+    qt5-qtbase \
+    libtorrent-rasterbar \
     mkdir /app/ /downloads
 
 WORKDIR /app/
