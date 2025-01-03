@@ -22,15 +22,12 @@ RUN apk add --no-cache \
 
 WORKDIR /app/
 
-# Download latest Seanime version
-RUN LATEST_VERSION=$(curl -s https://api.github.com/repos/5rahim/seanime/releases/latest | jq -r .tag_name) && \
-    VERSION_NO_V=$(echo ${LATEST_VERSION} | sed 's/v//') && \
-    echo "Latest version: ${LATEST_VERSION}" && \
-    echo "Version without v: ${VERSION_NO_V}" && \
-    wget "https://github.com/5rahim/seanime/releases/download/${LATEST_VERSION}/seanime-${VERSION_NO_V}_Linux_x86_64.tar.gz" && \
-    tar -xzf "seanime-${VERSION_NO_V}_Linux_x86_64.tar.gz" && \
-    rm "seanime-${VERSION_NO_V}_Linux_x86_64.tar.gz" && \
-    chmod +x seanime
+# Download specific version of Seanime
+ENV PKGVER=2.5.2
+RUN wget -q https://github.com/5rahim/seanime/releases/download/v${PKGVER}/seanime-${PKGVER}_Linux_x86_64.tar.gz \
+    && tar -xvzf seanime-${PKGVER}_Linux_x86_64.tar.gz \
+    && rm seanime-${PKGVER}_Linux_x86_64.tar.gz \
+    && chmod +x seanime
 
 ENV PATH="/usr/local/bin:$PATH"
 
