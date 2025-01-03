@@ -2,6 +2,8 @@
 
 A lightweight Docker image for Seanime, built on Alpine Linux.
 
+[![Docker Image CI/CD](https://github.com/hhftechnology/alpine-seanime/actions/workflows/docker-publish.yml/badge.svg?branch=main)](https://github.com/hhftechnology/alpine-seanime/actions/workflows/docker-publish.yml)
+
 ## Quick Start
 
 ```bash
