@@ -12,12 +12,12 @@ RUN apk add --no-cache \
     tar \
     jq \
     bash \
-    ffmpeg && \
+    ffmpeg \
     libstdc++ \
     boost-system \
     boost-program_options \
     qt5-qtbase \
-    libtorrent-rasterbar \
+    libtorrent-rasterbar && \
     mkdir /app/ /downloads
 
 WORKDIR /app/
