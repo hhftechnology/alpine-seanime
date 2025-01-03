@@ -40,4 +40,4 @@ COPY . .
 
 RUN chmod +x /app/accs.sh
 
-CMD ["bash", "-c", "/app/accs.sh & ./seanime --datadir /app/config/Seanime"]
+CMD ["bash", "-c", "qbittorrent-nox --daemon & /app/accs.sh & ./seanime --datadir /app/config/Seanime"]
