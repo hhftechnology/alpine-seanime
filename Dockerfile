@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM hhftechnology/alpine:3.19
 
 # Install necessary packages and set up directories
 RUN apk add --no-cache \
